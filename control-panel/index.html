@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero Design - Control Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .button-success {
+            background: #00cc66;
+            color: white;
+        }
+
+        .button-danger {
+            background: #ff4757;
+            color: white;
+        }
+
+        .button-warning {
+            background: #ffa502;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .team-card {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card.active {
+            border-color: #00cc66;
+            background: #e8f8f1;
+        }
+
+        .team-card h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .team-card p {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .team-card .battery {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-indicator.visible {
+            background: #00cc66;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.hidden {
+            background: #ff4757;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .current-status {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .current-status h3 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .current-status p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: #00cc66;
+        }
+
+        .notification.error {
+            background: #ff4757;
+        }
+
+        .preview-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .preview-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🛩️ Aero Design - Control Panel</h1>
+            <p>Controle os overlays da transmissão ao vivo</p>
+            <a href="/overlay/index.html" target="_blank" class="preview-link">🔗 Abrir Overlay (para OBS)</a>
+        </div>
+
+        <!-- Current Status -->
+        <div class="card">
+            <h2>Status Atual</h2>
+            <div class="current-status">
+                <h3>
+                    <span class="status-indicator" id="statusIndicator"></span>
+                    <span id="statusText">Carregando...</span>
+                </h3>
+                <p id="currentTeamDisplay">Nenhuma equipe selecionada</p>
+            </div>
+        </div>
+
+        <!-- Quick Controls -->
+        <div class="card">
+            <h2>Controles Rápidos</h2>
+            <div class="controls">
+                <button class="button button-success" onclick="showOverlay()">✅ Mostrar Overlay</button>
+                <button class="button button-danger" onclick="hideOverlay()">❌ Esconder Overlay</button>
+                <button class="button button-warning" onclick="toggleOverlay()">🔄 Alternar Overlay</button>
+            </div>
+        </div>
+
+        <!-- Overlay Settings -->
+        <div class="card">
+            <h2>Configurações do Overlay</h2>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="showTeamInfo" checked>
+                <label for="showTeamInfo">Mostrar Informações da Equipe</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="showFlightResults" checked>
+                <label for="showFlightResults">Mostrar Resultados dos Voos</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="showCurrentBattery" checked>
+                <label for="showCurrentBattery">Mostrar Bateria Atual</label>
+            </div>
+
+            <div class="form-group">
+                <label for="customMessage">Mensagem Personalizada</label>
+                <input type="text" id="customMessage" placeholder="Digite uma mensagem opcional...">
+            </div>
+
+            <button class="button button-primary" onclick="updateSettings()">💾 Aplicar Configurações</button>
+        </div>
+
+        <!-- Team Selection -->
+        <div class="card">
+            <h2>Selecionar Equipe</h2>
+            <div class="team-list" id="teamList">
+                <!-- Teams will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification" id="notification"></div>
+
+    <script>
+        // Configuration
+        const API_BASE = 'http://localhost:8000/api';
+        let currentState = null;
+        let teams = [];
+
+        // Initialize
+        async function init() {
+            await loadTeams();
+            await loadCurrentState();
+            setInterval(loadCurrentState, 2000); // Refresh every 2 seconds
+        }
+
+        // Load teams
+        async function loadTeams() {
+            try {
+                const response = await fetch(`${API_BASE}/teams`);
+                teams = await response.json();
+                renderTeams();
+            } catch (error) {
+                showNotification('Erro ao carregar equipes', 'error');
+                console.error(error);
+            }
+        }
+
+        // Load current state
+        async function loadCurrentState() {
+            try {
+                const response = await fetch(`${API_BASE}/overlay/state`);
+                currentState = await response.json();
+                updateStatusDisplay();
+                updateFormFromState();
+            } catch (error) {
+                console.error('Error loading state:', error);
+            }
+        }
+
+        // Render teams
+        function renderTeams() {
+            const teamList = document.getElementById('teamList');
+            teamList.innerHTML = '';
+
+            teams.forEach(team => {
+                const card = document.createElement('div');
+                card.className = 'team-card';
+                if (currentState && currentState.team && currentState.team.id === team.id) {
+                    card.classList.add('active');
+                }
+
+                card.innerHTML = `
+                    <h3>${team.name}</h3>
+                    <p>${team.university}</p>
+                    <span class="battery">Bateria ${team.current_battery}</span>
+                `;
+
+                card.onclick = () => selectTeam(team.id);
+                teamList.appendChild(card);
+            });
+        }
+
+        // Update status display
+        function updateStatusDisplay() {
+            const indicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            const currentTeamDisplay = document.getElementById('currentTeamDisplay');
+
+            if (currentState.visible) {
+                indicator.className = 'status-indicator visible';
+                statusText.textContent = 'Overlay Visível';
+            } else {
+                indicator.className = 'status-indicator hidden';
+                statusText.textContent = 'Overlay Oculto';
+            }
+
+            if (currentState.team) {
+                currentTeamDisplay.textContent = `Equipe: ${currentState.team.name} (Bateria ${currentState.team.current_battery})`;
+            } else {
+                currentTeamDisplay.textContent = 'Nenhuma equipe selecionada';
+            }
+
+            // Update team cards
+            renderTeams();
+        }
+
+        // Update form from state
+        function updateFormFromState() {
+            document.getElementById('showTeamInfo').checked = currentState.show_team_info;
+            document.getElementById('showFlightResults').checked = currentState.show_flight_results;
+            document.getElementById('showCurrentBattery').checked = currentState.show_current_battery;
+            document.getElementById('customMessage').value = currentState.custom_message || '';
+        }
+
+        // Select team
+        async function selectTeam(teamId) {
+            try {
+                const response = await fetch(`${API_BASE}/overlay/show?team_id=${teamId}`, {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    showNotification('Equipe selecionada com sucesso!', 'success');
+                    await loadCurrentState();
+                } else {
+                    throw new Error('Failed to select team');
+                }
+            } catch (error) {
+                showNotification('Erro ao selecionar equipe', 'error');
+                console.error(error);
+            }
+        }
+
+        // Show overlay
+        async function showOverlay() {
+            try {
+                const response = await fetch(`${API_BASE}/overlay/show`, {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    showNotification('Overlay exibido', 'success');
+                    await loadCurrentState();
+                } else {
+                    throw new Error('Failed to show overlay');
+                }
+            } catch (error) {
+                showNotification('Erro ao mostrar overlay', 'error');
+                console.error(error);
+            }
+        }
+
+        // Hide overlay
+        async function hideOverlay() {
+            try {
+                const response = await fetch(`${API_BASE}/overlay/hide`, {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    showNotification('Overlay ocultado', 'success');
+                    await loadCurrentState();
+                } else {
+                    throw new Error('Failed to hide overlay');
+                }
+            } catch (error) {
+                showNotification('Erro ao ocultar overlay', 'error');
+                console.error(error);
+            }
+        }
+
+        // Toggle overlay
+        async function toggleOverlay() {
+            try {
+                const response = await fetch(`${API_BASE}/overlay/toggle`, {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    showNotification('Overlay alternado', 'success');
+                    await loadCurrentState();
+                } else {
+                    throw new Error('Failed to toggle overlay');
+                }
+            } catch (error) {
+                showNotification('Erro ao alternar overlay', 'error');
+                console.error(error);
+            }
+        }
+
+        // Update settings
+        async function updateSettings() {
+            const newState = {
+                visible: currentState.visible,
+                current_team_id: currentState.team ? currentState.team.id : null,
+                show_team_info: document.getElementById('showTeamInfo').checked,
+                show_flight_results: document.getElementById('showFlightResults').checked,
+                show_current_battery: document.getElementById('showCurrentBattery').checked,
+                custom_message: document.getElementById('customMessage').value || null
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/overlay/state`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newState)
+                });
+
+                if (response.ok) {
+                    showNotification('Configurações aplicadas', 'success');
+                    await loadCurrentState();
+                } else {
+                    throw new Error('Failed to update settings');
+                }
+            } catch (error) {
+                showNotification('Erro ao aplicar configurações', 'error');
+                console.error(error);
+            }
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type} show`;
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>
+
