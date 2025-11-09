@@ -37,10 +37,20 @@ def main():
     browser_thread.daemon = True
     browser_thread.start()
 
-    # Start the server
+    # Start the server with auto-reload
     try:
         subprocess.run(
-            [sys.executable, "backend/main.py"],
+            [
+                "uv", "run", "uvicorn",
+                "backend.main:app",
+                "--host", "0.0.0.0",
+                "--port", "8000",
+                "--reload",
+                "--reload-include", "*.html",
+                "--reload-include", "*.json",
+                "--reload-include", "*.css",
+                "--reload-include", "*.js"
+            ],
             cwd=Path(__file__).parent
         )
     except KeyboardInterrupt:

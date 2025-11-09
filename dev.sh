@@ -19,8 +19,8 @@ show_help() {
 
 case "$1" in
     start)
-        echo "Starting backend server..."
-        python backend/main.py
+        echo "Starting backend server with auto-reload..."
+        uv run uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload --reload-include '*.html' --reload-include '*.json' --reload-include '*.css' --reload-include '*.js'
         ;;
     test)
         echo "Running example script..."
