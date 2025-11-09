@@ -99,11 +99,12 @@
             color: white;
         }
 
-        /* Flight Results - Bottom Right */
+        /* Flight Results - Right Side, Vertically Centered */
         .flight-results {
             position: absolute;
-            bottom: 40px;
+            top: 50%;
             right: 40px;
+            transform: translateY(-50%) translateX(100%);
             background: rgba(0, 0, 0, 0.85);
             border-radius: 15px;
             padding: 20px;
@@ -111,14 +112,13 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.1);
             opacity: 0;
-            transform: translateX(100%);
             transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             transition-delay: 0.2s;
         }
 
         .flight-results.visible {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(-50%) translateX(0);
         }
 
         .results-title {
@@ -312,6 +312,8 @@
 
         // State
         let currentState = null;
+        let currentTeamId = null;
+        let isTransitioning = false;
 
         // Status translations
         const statusTranslations = {
@@ -337,22 +339,62 @@
 
         // Update overlay based on state
         function updateOverlay(state) {
-            currentState = state;
+            // Check if team changed
+            const newTeamId = state.team ? state.team.id : null;
+            const teamChanged = currentTeamId !== null && newTeamId !== null && currentTeamId !== newTeamId;
 
-            // Show/hide team info card
-            if (state.visible && state.team && state.show_team_info) {
-                updateTeamInfo(state.team);
-                teamInfoCard.classList.add('visible');
-            } else {
+            if (teamChanged && !isTransitioning) {
+                // Team switched - do disappear then appear animation
+                isTransitioning = true;
+
+                // Hide current team
                 teamInfoCard.classList.remove('visible');
-            }
-
-            // Show/hide flight results
-            if (state.visible && state.team && state.show_flight_results) {
-                updateFlightResults(state.team.flight_results);
-                flightResults.classList.add('visible');
-            } else {
                 flightResults.classList.remove('visible');
+
+                // Wait for disappear animation then show new team
+                setTimeout(() => {
+                    // Update content while hidden
+                    currentState = state;
+                    currentTeamId = newTeamId;
+
+                    if (state.visible && state.team && state.show_team_info) {
+                        updateTeamInfo(state.team);
+                        // Small delay to ensure content is updated before showing
+                        setTimeout(() => {
+                            teamInfoCard.classList.add('visible');
+                        }, 50);
+                    }
+
+                    if (state.visible && state.team && state.show_flight_results) {
+                        updateFlightResults(state.team.flight_results);
+                        setTimeout(() => {
+                            flightResults.classList.add('visible');
+                        }, 50);
+                    }
+
+                    isTransitioning = false;
+                }, 600); // Wait for exit animation to complete
+
+            } else {
+                // Normal update (no team change)
+                currentState = state;
+                currentTeamId = newTeamId;
+
+                // Show/hide team info card
+                if (state.visible && state.team && state.show_team_info) {
+                    updateTeamInfo(state.team);
+                    teamInfoCard.classList.add('visible');
+                } else {
+                    teamInfoCard.classList.remove('visible');
+                }
+
+                // Show/hide flight results
+                if (state.visible && state.team && state.show_flight_results) {
+                    updateFlightResults(state.team.flight_results);
+                    flightResults.classList.add('visible');
+                } else {
+                    flightResults.classList.remove('visible');
+                }
             }
 
             // Show/hide custom message
