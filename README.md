@@ -1,14 +1,14 @@
-# Aero Design - Live Transmission Overlay System
+# AeroDesign - Live Transmission Overlay System
 
-A complete live broadcast overlay system designed for aero design competitions, allowing you to display dynamic information over your video stream in OBS.
+A complete live broadcast overlay system designed for the brazilian AeroDesign competitions, allowing you to display dynamic information over your video stream in OBS.
 
 ## 🎯 Features
 
-- **Real-time Overlays**: Display team information, aircraft photos, and flight results
-- **Web-based Control Panel**: Easy-to-use interface to control what appears on stream
+- **Real-time Overlays**: Display team information, aircraft photos, flight results and more
+- **Web-based Control Panel**: Easy-to-use interface to control what appears on the stream
 - **OBS Integration**: Works seamlessly with OBS Browser Sources
 - **Mock API**: Pre-loaded with sample data for testing
-- **Customizable**: Show/hide different elements, add custom messages
+- **Customizable**: Show/hide different elements, add custom messages, etc
 - **Responsive Design**: Professional-looking overlays with smooth animations
 
 ## 📋 What Gets Displayed
@@ -51,36 +51,26 @@ The overlay can show:
 
 ### Installation
 
-1. **Clone or navigate to the repository:**
+1. **Clone the repository:**
 
 ```bash
-cd /Users/rafael/Documents/git/aero-tv-transmission-overlayer
+git clone git@github.com:rafaellehmkuhl/AeroDesign-Live-Streaming-System.git
 ```
 
-2. **Install dependencies using UV:**
+2. **Install dependencies:**
 
 ```bash
-uv sync
+./dev.sh install
 ```
 
-Or if you prefer pip:
-
-```bash
-pip install -e .
-```
+Notice you need `uv` installed on your system, as it is used for package management on this repository.
 
 ### Running the Application
 
 1. **Start the backend server:**
 
 ```bash
-python backend/main.py
-```
-
-Or with uvicorn directly:
-
-```bash
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+./dev.sh start
 ```
 
 The server will start on `http://localhost:8000`
@@ -92,9 +82,11 @@ Open your web browser and go to:
 http://localhost:8000/control-panel/index.html
 ```
 
+There you can show and hide the overlays, decide which team will appear in the screen, etc.
+
 3. **Test the overlay in browser:**
 
-Before adding to OBS, test it in your browser:
+Before adding to OBS, you can see the overlay in any browser at:
 ```
 http://localhost:8000/overlay/index.html
 ```
@@ -192,40 +184,9 @@ curl -X POST "http://localhost:8000/api/teams/team001/results" \
 
 ## 🧪 Mock Data
 
-The system comes pre-loaded with three mock teams:
-- **AeroTech Racing** - Universidade de São Paulo
-- **Sky Pioneers** - Instituto Tecnológico de Aeronáutica
-- **Falcon Engineering** - Universidade Federal de Minas Gerais
+The system comes pre-loaded with some teams that participated in the 2025 competition.
+Each team has sample (fake) flight results you can use for testing.
 
-Each team has sample flight results you can use for testing.
-
-## 🎨 Customization
-
-### Changing Colors
-
-Edit `overlay/index.html` and modify the CSS:
-- Team card gradient: `.team-info-card` background
-- Flight results: `.flight-results` background
-- Status colors: `.validated`, `.invalidated`, `.pending` border-left-color
-
-### Changing Layout
-
-The overlay is positioned using absolute positioning:
-- Team info: Bottom-left (40px from edges)
-- Flight results: Bottom-right (40px from edges)
-- Custom message: Top-center (40px from top)
-
-Adjust these values in the CSS to reposition elements.
-
-### Adding Your Logo
-
-Add your logo to the overlay by modifying `overlay/index.html`:
-
-```html
-<div class="logo">
-  <img src="your-logo-url.png" alt="Logo">
-</div>
-```
 
 ## 🔧 Configuration
 
@@ -269,8 +230,7 @@ aero-tv-transmission-overlayer/
 
 1. Make sure the backend is running
 2. Check the OBS browser source URL is correct
-3. Right-click the browser source → Interact → Open browser console (F12) to check for errors
-4. Try refreshing the browser source (right-click → Refresh)
+3. Try refreshing the browser source (right-click → Properties → Refresh cache of current page)
 
 ### CORS Errors
 
@@ -282,33 +242,6 @@ If port 8000 is already in use:
 1. Change the port in `backend/main.py`
 2. Update the API_URL in `overlay/index.html`
 3. Update the API_BASE in `control-panel/index.html`
-
-### Teams Not Loading
-
-Check that the backend initialized correctly:
-```bash
-curl http://localhost:8000/api/teams
-```
-
-Should return the three mock teams.
-
-## 🚀 Production Deployment
-
-For production use:
-
-1. **Use a real database** instead of in-memory storage
-2. **Add authentication** to the control panel
-3. **Use HTTPS** for secure connections
-4. **Configure CORS** properly for your domain
-5. **Add error logging** and monitoring
-6. **Upload aircraft photos** to a CDN or server
-
-## 📝 Notes
-
-- The system uses in-memory storage, so data resets when the server restarts
-- Aircraft photos use placeholder images by default
-- The overlay is designed for 1920x1080 resolution
-- All text is in Portuguese (BR) but can be easily translated
 
 ## 🤝 Contributing
 
