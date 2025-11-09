@@ -52,174 +52,31 @@ overlay_state = OverlayState()
 
 # Real competition data - 2025 SAE Brasil AeroDesign - Classe Regular
 def initialize_mock_data():
-    """Initialize real teams from 2025 competition"""
+    """Load teams from JSON file with battery data"""
     global teams_db
+    import json
 
-    real_teams = [
-        Team(
-            id="team001",
-            name="EESC-USP Alpha",
-            university="Escola de Engenharia de São Carlos - USP",
-            aircraft_photo_url="https://via.placeholder.com/300x200/0066cc/ffffff?text=EESC-USP+Alpha",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team002",
-            name="Axé Fly",
-            university="Universidade Federal da Bahia (UFBA)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/FF9900/ffffff?text=Axe+Fly",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team003",
-            name="Uirá AeroDesign",
-            university="Universidade Federal de Itajubá",
-            aircraft_photo_url="https://via.placeholder.com/300x200/00cc66/ffffff?text=Uira",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team004",
-            name="Uai, sô! Fly!!!",
-            university="Universidade Federal de Minas Gerais (UFMG)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/cc0000/ffffff?text=Uai+So+Fly",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team005",
-            name="AeroFEG",
-            university="Faculdade de Engenharia de Guaratinguetá - UNESP",
-            aircraft_photo_url="https://via.placeholder.com/300x200/9933ff/ffffff?text=AeroFEG",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team006",
-            name="Keep Flying",
-            university="Escola Politécnica - USP",
-            aircraft_photo_url="https://via.placeholder.com/300x200/0099cc/ffffff?text=Keep+Flying",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team007",
-            name="Montenegro",
-            university="Instituto Tecnológico de Aeronáutica (ITA)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/003366/ffffff?text=Montenegro",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team008",
-            name="Tucano",
-            university="Universidade Federal de Uberlândia (UFU)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/ffcc00/ffffff?text=Tucano",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team009",
-            name="Falcons AeroDesign",
-            university="Centro Universitário FACENS",
-            aircraft_photo_url="https://via.placeholder.com/300x200/990000/ffffff?text=Falcons",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team010",
-            name="CEFAST AeroDesign",
-            university="Centro Federal de Educação Tecnológica de Minas Gerais",
-            aircraft_photo_url="https://via.placeholder.com/300x200/006633/ffffff?text=CEFAST",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team011",
-            name="F-Carranca",
-            university="Universidade Federal do Vale do São Francisco (UNIVASF)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/ff6600/ffffff?text=F-Carranca",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team012",
-            name="Kukulcán AeroDesign",
-            university="Instituto Superior de Ingeniería Mecánica - México",
-            aircraft_photo_url="https://via.placeholder.com/300x200/cc6600/ffffff?text=Kukulcan",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team013",
-            name="AeroJampa",
-            university="Universidade Federal da Paraíba (UFPB)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/3366cc/ffffff?text=AeroJampa",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team014",
-            name="Megazord AeroDesign",
-            university="Instituto Tecnológico de Aeronáutica - São José dos Campos",
-            aircraft_photo_url="https://via.placeholder.com/300x200/ff0066/ffffff?text=Megazord",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team015",
-            name="Harpia AeroDesign UFABC",
-            university="Universidade Federal do ABC (UFABC)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/336699/ffffff?text=Harpia",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team016",
-            name="Urubus AeroDesign",
-            university="Universidade Estadual de Campinas (UNICAMP)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/000000/ffffff?text=Urubus",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team017",
-            name="UTFalcon AeroDesign",
-            university="Universidade Tecnológica Federal do Paraná - Ponta Grossa",
-            aircraft_photo_url="https://via.placeholder.com/300x200/666666/ffffff?text=UTFalcon",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team018",
-            name="Falcão Branco",
-            university="Centro Universitário Hermínio Ometto (FHO)",
-            aircraft_photo_url="https://via.placeholder.com/300x200/cccccc/333333?text=Falcao+Branco",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team019",
-            name="FEI Regular",
-            university="Centro Universitário da FEI",
-            aircraft_photo_url="https://via.placeholder.com/300x200/0033cc/ffffff?text=FEI",
-            current_battery=1,
-            flight_results=[]
-        ),
-        Team(
-            id="team020",
-            name="AeroScorpion IFSP",
-            university="Instituto Federal de São Paulo - Araraquara",
-            aircraft_photo_url="https://via.placeholder.com/300x200/993300/ffffff?text=AeroScorpion",
-            current_battery=1,
-            flight_results=[]
-        ),
-    ]
+    mock_data_path = Path(__file__).parent / "mock_data.json"
 
-    for team in real_teams:
-        teams_db[team.id] = team
+    try:
+        with open(mock_data_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        for team_data in data['teams']:
+            # Convert flight_results to FlightResult objects
+            flight_results = [
+                FlightResult(**result) for result in team_data['flight_results']
+            ]
+            team_data['flight_results'] = flight_results
+
+            # Create Team object
+            team = Team(**team_data)
+            teams_db[team.id] = team
+
+    except FileNotFoundError:
+        print(f"Warning: Mock data file not found at {mock_data_path}")
+    except json.JSONDecodeError as e:
+        print(f"Error parsing mock data JSON: {e}")
 
 # Initialize mock data on startup
 initialize_mock_data()
