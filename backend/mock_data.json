@@ -4,242 +4,541 @@
       "id": "team001",
       "name": "EESC-USP Alpha",
       "university": "Escola de Engenharia de São Carlos - USP",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/0066cc/ffffff?text=EESC-USP+Alpha",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 67.3, "notes": null},
-        {"battery_number": 2, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 82.5, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 67.3,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 82.5,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team002",
       "name": "Axé Fly",
       "university": "Universidade Federal da Bahia (UFBA)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/FF9900/ffffff?text=Axe+Fly",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 55.8, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 71.2, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 78.9, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 55.8,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 71.2,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 78.9,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team003",
       "name": "Uirá AeroDesign",
       "university": "Universidade Federal de Itajubá",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/00cc66/ffffff?text=Uira",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 64.7, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 88.3, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 64.7,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 88.3,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team004",
       "name": "Uai, sô! Fly!!!",
       "university": "Universidade Federal de Minas Gerais (UFMG)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/cc0000/ffffff?text=Uai+So+Fly",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 72.1, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 79.5, "notes": null},
-        {"battery_number": 3, "status": "invalidated", "score": null, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 72.1,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 79.5,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team005",
       "name": "AeroFEG",
       "university": "Faculdade de Engenharia de Guaratinguetá - UNESP",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/9933ff/ffffff?text=AeroFEG",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 61.4, "notes": null},
-        {"battery_number": 2, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 75.8, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 61.4,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 75.8,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team006",
       "name": "Keep Flying",
       "university": "Escola Politécnica - USP",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/0099cc/ffffff?text=Keep+Flying",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 69.2, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 74.6, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 91.3, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 69.2,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 74.6,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 91.3,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team007",
       "name": "Montenegro",
       "university": "Instituto Tecnológico de Aeronáutica (ITA)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/003366/ffffff?text=Montenegro",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 58.9, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 68.4, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 83.7, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 58.9,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 68.4,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 83.7,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team008",
       "name": "Tucano",
       "university": "Universidade Federal de Uberlândia (UFU)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/ffcc00/ffffff?text=Tucano",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 62.1, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 76.5, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 62.1,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 76.5,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team009",
       "name": "Falcons AeroDesign",
       "university": "Centro Universitário FACENS",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/990000/ffffff?text=Falcons",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 64.3, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 70.8, "notes": null},
-        {"battery_number": 3, "status": "invalidated", "score": null, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 64.3,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 70.8,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team010",
       "name": "CEFAST AeroDesign",
       "university": "Centro Federal de Educação Tecnológica de Minas Gerais",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/006633/ffffff?text=CEFAST",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 56.7, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 73.2, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 85.1, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 56.7,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 73.2,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 85.1,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team011",
       "name": "F-Carranca",
       "university": "Universidade Federal do Vale do São Francisco (UNIVASF)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/ff6600/ffffff?text=F-Carranca",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 60.5, "notes": null},
-        {"battery_number": 2, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 77.9, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 60.5,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 77.9,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team012",
       "name": "Kukulcán AeroDesign",
       "university": "Instituto Superior de Ingeniería Mecánica - México",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/cc6600/ffffff?text=Kukulcan",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 66.8, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 80.2, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 66.8,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 80.2,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team013",
       "name": "AeroJampa",
       "university": "Universidade Federal da Paraíba (UFPB)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/3366cc/ffffff?text=AeroJampa",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 63.2, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 69.7, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 84.6, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 63.2,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 69.7,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 84.6,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team014",
       "name": "Megazord AeroDesign",
       "university": "Instituto Tecnológico de Aeronáutica - São José dos Campos",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/ff0066/ffffff?text=Megazord",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 70.8, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 76.3, "notes": null},
-        {"battery_number": 3, "status": "invalidated", "score": null, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 70.8,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 76.3,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team015",
       "name": "Harpia AeroDesign UFABC",
       "university": "Universidade Federal do ABC (UFABC)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/336699/ffffff?text=Harpia",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 59.4, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 72.9, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 87.2, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 59.4,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 72.9,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 87.2,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team016",
       "name": "Urubus AeroDesign",
       "university": "Universidade Estadual de Campinas (UNICAMP)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/000000/ffffff?text=Urubus",
+      "aircraft_photo_url": "assets/plane-photos/team016.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 65.3, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 79.8, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 65.3,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 79.8,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team017",
       "name": "UTFalcon AeroDesign",
       "university": "Universidade Tecnológica Federal do Paraná - Ponta Grossa",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/666666/ffffff?text=UTFalcon",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 62.7, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 68.1, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 81.4, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 62.7,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 68.1,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 81.4,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team018",
       "name": "Falcão Branco",
       "university": "Centro Universitário Hermínio Ometto (FHO)",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/cccccc/333333?text=Falcao+Branco",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 57.9, "notes": null},
-        {"battery_number": 2, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 74.3, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 57.9,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 74.3,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team019",
       "name": "FEI Regular",
       "university": "Centro Universitário da FEI",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/0033cc/ffffff?text=FEI",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "validated", "score": 66.5, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 75.8, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 89.7, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "validated",
+          "score": 66.5,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 75.8,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 89.7,
+          "notes": null
+        }
       ]
     },
     {
       "id": "team020",
       "name": "AeroScorpion IFSP",
       "university": "Instituto Federal de São Paulo - Araraquara",
-      "aircraft_photo_url": "https://via.placeholder.com/300x200/993300/ffffff?text=AeroScorpion",
+      "aircraft_photo_url": "assets/plane-photos/default.jpg",
       "current_battery": 4,
       "flight_results": [
-        {"battery_number": 1, "status": "invalidated", "score": null, "notes": null},
-        {"battery_number": 2, "status": "validated", "score": 63.4, "notes": null},
-        {"battery_number": 3, "status": "validated", "score": 78.6, "notes": null}
+        {
+          "battery_number": 1,
+          "status": "invalidated",
+          "score": null,
+          "notes": null
+        },
+        {
+          "battery_number": 2,
+          "status": "validated",
+          "score": 63.4,
+          "notes": null
+        },
+        {
+          "battery_number": 3,
+          "status": "validated",
+          "score": 78.6,
+          "notes": null
+        }
       ]
     }
   ]
 }
-
