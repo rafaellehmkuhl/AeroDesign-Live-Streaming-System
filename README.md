@@ -10,6 +10,7 @@ A complete live broadcast overlay system designed for the brazilian AeroDesign c
 - **Mock API**: Pre-loaded with sample data for testing
 - **Customizable**: Show/hide different elements, add custom messages, etc
 - **Responsive Design**: Professional-looking overlays with smooth animations
+- **Web Components**: Modular, reusable components for easy team development
 
 ## 📋 What Gets Displayed
 
@@ -39,6 +40,14 @@ The overlay can show:
 │  (Polls API)    │
 └─────────────────┘
 ```
+
+### Web Components Architecture
+
+The project is built with **native Web Components** for better team collaboration:
+
+- **Backend Developer**: Works on `backend/main.py` (Python/FastAPI)
+- **UI/UX Developer**: Works on component styles and animations
+- **Frontend Logic Developer**: Works on component behavior and state management
 
 ## 🚀 Quick Start
 
@@ -214,13 +223,26 @@ uvicorn.run(app, host="0.0.0.0", port=8000)  # Change 8000 to your port
 ```
 aero-tv-transmission-overlayer/
 ├── backend/
-│   └── main.py              # FastAPI backend server
+│   ├── main.py              # FastAPI backend server
+│   └── mock_data.json       # Team data
+├── shared/
+│   └── components/
+│       ├── base-component.js    # Base class for all components
+│       └── api-service.js       # Centralized API communication
 ├── overlay/
-│   └── index.html           # OBS browser source overlay
+│   ├── index.html               # OBS browser source overlay
+│   └── components/
+│       ├── team-info-card.js    # Team info display component
+│       ├── flight-results.js    # Flight results component
+│       └── custom-message.js    # Custom message component
 ├── control-panel/
-│   └── index.html           # Control panel interface
-├── pyproject.toml           # Python dependencies (UV)
-├── .gitignore
+│   ├── index.html               # Control panel interface
+│   └── components/
+│       ├── status-indicator.js  # Status display component
+│       ├── team-card.js         # Team selection card component
+│       ├── control-buttons.js   # Quick action buttons
+│       └── notification-toast.js # Notification system
+├── pyproject.toml               # Python dependencies (UV)
 └── README.md
 ```
 

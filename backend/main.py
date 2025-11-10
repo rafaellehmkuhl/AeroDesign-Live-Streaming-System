@@ -205,12 +205,16 @@ async def update_current_battery(team_id: str, battery_number: int):
 # Serve static files
 overlay_dir = Path(__file__).parent.parent / "overlay"
 control_panel_dir = Path(__file__).parent.parent / "control-panel"
+shared_dir = Path(__file__).parent.parent / "shared"
 
 if overlay_dir.exists():
     app.mount("/overlay", StaticFiles(directory=str(overlay_dir)), name="overlay")
 
 if control_panel_dir.exists():
     app.mount("/control-panel", StaticFiles(directory=str(control_panel_dir)), name="control-panel")
+
+if shared_dir.exists():
+    app.mount("/shared", StaticFiles(directory=str(shared_dir)), name="shared")
 
 if __name__ == "__main__":
     import uvicorn

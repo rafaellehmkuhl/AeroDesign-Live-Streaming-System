@@ -50,223 +50,6 @@
             font-weight: bold;
         }
 
-        /* Team Info Card - Bottom Left */
-        .team-info-card {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.95), rgba(0, 51, 153, 0.95));
-            border-radius: 15px;
-            padding: 25px;
-            min-width: 450px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            opacity: 0;
-            transform: translateX(-100%);
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .team-info-card.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .team-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .team-photo {
-            width: 120px;
-            height: 80px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .team-details {
-            flex: 1;
-        }
-
-        .team-name {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 5px;
-        }
-
-        .team-university {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-        }
-
-        .current-battery {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .current-battery-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-right: 5px;
-        }
-
-        .current-battery-number {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-        }
-
-        /* Flight Results - Right Side, Vertically Centered */
-        .flight-results {
-            position: absolute;
-            top: 50%;
-            right: 40px;
-            transform: translateY(-50%) translateX(100%);
-            background: rgba(0, 0, 0, 0.85);
-            border-radius: 15px;
-            padding: 20px;
-            min-width: 400px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transition-delay: 0.2s;
-        }
-
-        .flight-results.visible {
-            opacity: 1;
-            transform: translateY(-50%) translateX(0);
-        }
-
-        .results-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .result-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid;
-            transition: all 0.3s;
-        }
-
-        .result-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .result-item.validated {
-            border-left-color: #00cc66;
-        }
-
-        .result-item.invalidated {
-            border-left-color: #cc0000;
-        }
-
-        .result-item.pending {
-            border-left-color: #ffaa00;
-            animation: pulse 2s infinite;
-        }
-
-        .result-item.not_flown {
-            border-left-color: #666666;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        .result-battery {
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            margin-right: 10px;
-        }
-
-        .result-status {
-            flex: 1;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .result-score {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            min-width: 60px;
-            text-align: right;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-left: 10px;
-        }
-
-        .status-badge.validated {
-            background: #00cc66;
-            color: white;
-        }
-
-        .status-badge.invalidated {
-            background: #cc0000;
-            color: white;
-        }
-
-        .status-badge.pending {
-            background: #ffaa00;
-            color: black;
-        }
-
-        /* Custom Message - Top Center */
-        .custom-message {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-100%);
-            background: linear-gradient(135deg, rgba(255, 170, 0, 0.95), rgba(255, 136, 0, 0.95));
-            border-radius: 10px;
-            padding: 15px 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-
-        .custom-message.visible {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .custom-message-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
         /* AeroTV Logo - Bottom Right */
         .aerotv-logo {
             position: absolute;
@@ -289,81 +72,45 @@
         <!-- Development Border (remove for production) -->
         <div class="dev-border"></div>
 
-        <!-- Team Info Card -->
-        <div class="team-info-card" id="teamInfoCard">
-            <div class="team-header">
-                <img src="" alt="Aircraft" class="team-photo" id="teamPhoto" style="display: none;">
-                <div class="team-details">
-                    <div class="team-name" id="teamName">Team Name</div>
-                    <div class="team-university" id="teamUniversity">University</div>
-                    <div class="current-battery" id="currentBatteryBadge" style="display: none;">
-                        <span class="current-battery-label">Bateria Atual:</span>
-                        <span class="current-battery-number" id="currentBattery">1</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Flight Results -->
-        <div class="flight-results" id="flightResults">
-            <div class="results-title">Resultados dos Voos</div>
-            <div id="resultsContainer">
-                <!-- Results will be dynamically inserted here -->
-            </div>
-        </div>
-
-        <!-- Custom Message -->
-        <div class="custom-message" id="customMessage">
-            <div class="custom-message-text" id="customMessageText"></div>
-        </div>
+        <!-- Web Components -->
+        <team-info-card id="teamInfoCard"></team-info-card>
+        <flight-results id="flightResults"></flight-results>
+        <custom-message id="customMessage"></custom-message>
 
         <!-- AeroTV Logo -->
         <img src="assets/aerotv-logo.png" alt="AeroTV" class="aerotv-logo">
     </div>
 
-    <script>
-        // Configuration
-        const API_URL = 'http://localhost:8000/api/overlay/state';
-        const POLL_INTERVAL = 500; // Poll every 500ms for smooth updates
+    <!-- API Service (auto-polling) -->
+    <api-service auto-poll></api-service>
 
-        // DOM Elements
+    <!-- Load Base Component First -->
+    <script type="module" src="../shared/components/base-component.js"></script>
+
+    <!-- Load API Service -->
+    <script type="module" src="../shared/components/api-service.js"></script>
+
+    <!-- Load Overlay Components -->
+    <script type="module" src="./components/team-info-card.js"></script>
+    <script type="module" src="./components/flight-results.js"></script>
+    <script type="module" src="./components/custom-message.js"></script>
+
+    <!-- Application Logic -->
+    <script type="module">
+        // Get component references
         const teamInfoCard = document.getElementById('teamInfoCard');
-        const teamPhoto = document.getElementById('teamPhoto');
-        const teamName = document.getElementById('teamName');
-        const teamUniversity = document.getElementById('teamUniversity');
-        const currentBattery = document.getElementById('currentBattery');
-        const currentBatteryBadge = document.getElementById('currentBatteryBadge');
         const flightResults = document.getElementById('flightResults');
-        const resultsContainer = document.getElementById('resultsContainer');
         const customMessage = document.getElementById('customMessage');
-        const customMessageText = document.getElementById('customMessageText');
 
-        // State
-        let currentState = null;
+        // State tracking for smooth transitions
         let currentTeamId = null;
         let isTransitioning = false;
 
-        // Status translations
-        const statusTranslations = {
-            'validated': 'Validado',
-            'invalidated': 'Invalidado',
-            'pending': 'Em andamento',
-            'not_flown': 'Não voado'
-        };
-
-        // Fetch overlay state from API
-        async function fetchOverlayState() {
-            try {
-                const response = await fetch(API_URL);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                updateOverlay(data);
-            } catch (error) {
-                console.error('Error fetching overlay state:', error);
-            }
-        }
+        // Listen for state updates from API service
+        document.addEventListener('state-updated', (event) => {
+            const state = event.detail;
+            updateOverlay(state);
+        });
 
         // Update overlay based on state
         function updateOverlay(state) {
@@ -376,28 +123,19 @@
                 isTransitioning = true;
 
                 // Hide current team
-                teamInfoCard.classList.remove('visible');
-                flightResults.classList.remove('visible');
+                teamInfoCard.hide();
+                flightResults.hide();
 
                 // Wait for disappear animation then show new team
                 setTimeout(() => {
-                    // Update content while hidden
-                    currentState = state;
                     currentTeamId = newTeamId;
 
                     if (state.visible && state.team && state.show_team_info) {
-                        updateTeamInfo(state.team);
-                        // Small delay to ensure content is updated before showing
-                        setTimeout(() => {
-                            teamInfoCard.classList.add('visible');
-                        }, 50);
+                        teamInfoCard.show(state.team, state.show_current_battery);
                     }
 
                     if (state.visible && state.team && state.show_flight_results) {
-                        updateFlightResults(state.team.flight_results);
-                        setTimeout(() => {
-                            flightResults.classList.add('visible');
-                        }, 50);
+                        flightResults.show(state.team.flight_results);
                     }
 
                     isTransitioning = false;
@@ -405,97 +143,32 @@
 
             } else {
                 // Normal update (no team change)
-                currentState = state;
                 currentTeamId = newTeamId;
 
                 // Show/hide team info card
                 if (state.visible && state.team && state.show_team_info) {
-                    updateTeamInfo(state.team);
-                    teamInfoCard.classList.add('visible');
+                    teamInfoCard.show(state.team, state.show_current_battery);
                 } else {
-                    teamInfoCard.classList.remove('visible');
+                    teamInfoCard.hide();
                 }
 
                 // Show/hide flight results
                 if (state.visible && state.team && state.show_flight_results) {
-                    updateFlightResults(state.team.flight_results);
-                    flightResults.classList.add('visible');
+                    flightResults.show(state.team.flight_results);
                 } else {
-                    flightResults.classList.remove('visible');
+                    flightResults.hide();
                 }
             }
 
             // Show/hide custom message
             if (state.visible && state.custom_message) {
-                customMessageText.textContent = state.custom_message;
-                customMessage.classList.add('visible');
+                customMessage.show(state.custom_message);
             } else {
-                customMessage.classList.remove('visible');
+                customMessage.hide();
             }
         }
 
-        // Update team info
-        function updateTeamInfo(team) {
-            teamName.textContent = team.name;
-            teamUniversity.textContent = team.university;
-
-            if (team.aircraft_photo_url) {
-                teamPhoto.src = team.aircraft_photo_url;
-                teamPhoto.style.display = 'block';
-            } else {
-                teamPhoto.style.display = 'none';
-            }
-
-            if (currentState.show_current_battery) {
-                currentBattery.textContent = team.current_battery;
-                currentBatteryBadge.style.display = 'inline-block';
-            } else {
-                currentBatteryBadge.style.display = 'none';
-            }
-        }
-
-        // Update flight results
-        function updateFlightResults(results) {
-            resultsContainer.innerHTML = '';
-
-            if (!results || results.length === 0) {
-                resultsContainer.innerHTML = '<div style="color: rgba(255,255,255,0.6); text-align: center; padding: 10px;">Nenhum resultado disponível</div>';
-                return;
-            }
-
-            results.forEach(result => {
-                const resultItem = document.createElement('div');
-                resultItem.className = `result-item ${result.status}`;
-
-                const batteryLabel = document.createElement('span');
-                batteryLabel.className = 'result-battery';
-                batteryLabel.textContent = `Bateria ${result.battery_number}`;
-
-                const statusLabel = document.createElement('span');
-                statusLabel.className = 'result-status';
-                statusLabel.textContent = statusTranslations[result.status] || result.status;
-
-                const scoreLabel = document.createElement('span');
-                scoreLabel.className = 'result-score';
-                scoreLabel.textContent = result.score !== null ? result.score.toFixed(1) : '-';
-
-                resultItem.appendChild(batteryLabel);
-                resultItem.appendChild(statusLabel);
-                resultItem.appendChild(scoreLabel);
-
-                resultsContainer.appendChild(resultItem);
-            });
-        }
-
-        // Start polling
-        function startPolling() {
-            fetchOverlayState();
-            setInterval(fetchOverlayState, POLL_INTERVAL);
-        }
-
-        // Initialize
-        startPolling();
+        console.log('Aero Design Overlay - Web Components loaded');
     </script>
 </body>
 </html>
-
